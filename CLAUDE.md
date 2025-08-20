@@ -1,4 +1,4 @@
-# Beard Blog - Ultimate AI-Powered Blog Automation System
+# Klaude Blog - AI-Powered Content Automation Template
 
 ## Project Overview
 This is an Astro-based blog with advanced Claude Code automation for content creation, research, and multi-platform publishing.

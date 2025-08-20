@@ -88,6 +88,19 @@ claude-code "/new-post 'Getting Started with AI-Powered Blogging'"
 
 ## 🤖 AI Automation Commands
 
+### Template Customization
+```bash
+# Update template for different brand/topic
+/update-template
+```
+**Interactive setup for:**
+- Brand name customization (e.g., "TechCorp Blog", "StartupLife")  
+- Topic focus (tech, business, finance, health, ai, startup, marketing, etc.)
+- Content categories, word count targets, posting frequency
+- Tone and style preferences
+
+**Supported Topics:** tech, business, finance, health, education, ai, startup, marketing, lifestyle, travel, food, sports, gaming, crypto - each with pre-configured relevant categories.
+
 ### Content Creation
 ```bash
 # Generate a new blog post
@@ -111,6 +124,10 @@ claude-code "/new-post 'Getting Started with AI-Powered Blogging'"
 
 ### Examples
 ```bash
+# Customize template for tech company
+/update-template
+# → Brand: "TechCorp Blog", Topic: "tech"
+
 # Quick blog post creation
 /new-post "Top React Hooks for 2025"
 
@@ -135,6 +152,7 @@ klaude-blog/
 │   │   ├── seo-optimizer.md
 │   │   └── social-media-manager.md
 │   ├── commands/               # Automation commands
+│   │   ├── update-template.md
 │   │   ├── new-post.md
 │   │   ├── content-pipeline.md
 │   │   ├── research-topic.md

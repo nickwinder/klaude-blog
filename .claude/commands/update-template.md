@@ -1,20 +1,23 @@
 # Update Template
 
-Updates the CLAUDE.md template with a new brand name and topic focus.
+A comprehensive template update command that rebrands the entire blog for a new topic and brand.
 
 ## Usage
 
 This command will prompt you for:
-1. Brand name (e.g., "TechCorp Blog", "StartupLife")
-2. Topic focus (e.g., tech, business, finance, health, ai, startup, etc.)
+1. Brand name (e.g., "TechCorp Blog", "StartupLife", "you've been bearded")
+2. Topic focus (e.g., tech, business, finance, health, ai, startup, lifestyle, etc.)
 3. Optional customizations (word count, posting frequency, tone, categories)
 
 ## What it does
 
-- Updates the main heading with your brand name and topic-appropriate subtitle
-- Replaces content categories with topic-relevant ones
-- Allows customization of word count targets, posting frequency, and tone
-- Preserves all other template structure and guidelines
+This command updates **all** necessary files to completely rebrand your blog:
+
+1. **`CLAUDE.md`** - Project instructions and guidelines
+2. **`src/consts.ts`** - Site title and description
+3. **`package.json`** - Package name
+4. **`src/pages/about.astro`** - About page content
+5. **`src/components/Header.astro`** - Social media links
 
 ## Supported Topics
 
@@ -33,13 +36,26 @@ This command will prompt you for:
 - **gaming**: Gaming Reviews & Industry News
 - **crypto**: Cryptocurrency & Blockchain Analysis
 
+## Topic-Specific Content Categories
+
+Each topic comes with predefined content categories, but you can customize them:
+
+- **tech**: Technology & Innovation, Software Development, Emerging Technologies, Tech Industry Analysis, Product Reviews
+- **business**: Business Strategy, Market Analysis, Leadership & Management, Industry Insights, Case Studies
+- **finance**: Market Analysis, Investment Strategies, Economic Commentary, Financial Planning, Industry News
+- **health**: Wellness & Fitness, Nutrition & Diet, Mental Health, Medical Research, Healthy Living
+- **lifestyle**: Lifestyle & Personal Development, Health & Wellness, Fashion & Style, Personal Care, Life Tips
+- **ai**: Artificial Intelligence, Machine Learning, AI Applications, Industry Impact, Technical Tutorials
+- **startup**: Entrepreneurship, Startup Strategies, Business Development, Funding & Investment, Growth Hacking
+
 ---
 
 ```bash
 #!/bin/bash
 
-echo "🎨 Template Updater for Claude Code Blog"
-echo "========================================"
+echo "🎨 Complete Blog Template Updater"
+echo "=================================="
+echo "This will update ALL files to rebrand your blog completely."
 echo
 
 # Get brand name
@@ -67,33 +83,49 @@ read -p "Posts per week (e.g., '2-3'): " frequency
 read -p "Content tone (e.g., 'Professional yet approachable'): " tone
 read -p "Custom categories (comma-separated): " categories
 
-# Build command
-cmd="node scripts/update-template.js \"$brand_name\" \"$topic\""
+echo
+echo "🤖 Delegating to Claude for complete template update..."
+echo
+
+# Create instruction message for Claude
+cat << EOF
+
+Please update the entire blog template with the following details:
+
+**Brand Name:** $brand_name
+**Topic Focus:** $topic
+EOF
 
 if [ ! -z "$word_count" ]; then
-    cmd="$cmd --word-count \"$word_count\""
+    echo "**Word Count:** $word_count"
 fi
 
 if [ ! -z "$frequency" ]; then
-    cmd="$cmd --frequency \"$frequency\""
+    echo "**Posting Frequency:** $frequency per week"
 fi
 
 if [ ! -z "$tone" ]; then
-    cmd="$cmd --tone \"$tone\""
+    echo "**Content Tone:** $tone"
 fi
 
 if [ ! -z "$categories" ]; then
-    cmd="$cmd --categories \"$categories\""
+    echo "**Custom Categories:** $categories"
 fi
 
-echo
-echo "Running: $cmd"
-echo
+cat << EOF
 
-# Execute the command
-eval $cmd
+Please update these files completely:
+
+1. **CLAUDE.md** - Update project heading, content categories, and guidelines
+2. **src/consts.ts** - Update SITE_TITLE and SITE_DESCRIPTION
+3. **package.json** - Update package name (use kebab-case)
+4. **src/pages/about.astro** - Rewrite about page content for the new brand/topic
+5. **src/components/Header.astro** - Update social media links appropriate for the niche
+
+Make sure all content is cohesive and aligned with the topic focus.
+EOF
 
 echo
-echo "✅ Template updated! Check CLAUDE.md for the changes."
-echo "💡 Tip: You can now start creating content with your new brand focus!"
+echo "✅ Instructions provided to Claude. Claude will now update all files."
+echo "💡 After completion, your blog will be fully rebranded!"
 ```

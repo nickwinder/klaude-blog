@@ -6,8 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "update-template": "node scripts/update-template.js"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.4",
